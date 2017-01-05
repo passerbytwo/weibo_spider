@@ -31,6 +31,7 @@ def Page_Access(url,i):
 	gzipped = response.headers.get('Content-Encoding')
 	if gzipped:
 		html = zlib.decompress(html, 16+zlib.MAX_WBITS)
+	response.close()
 
 	return html
 
